@@ -1,0 +1,9 @@
+/* English edition overrides: Fredoka (display) + Nunito (body), loaded last */
+body{font-family:WenKai,"Nunito",system-ui,sans-serif}
+h1,h2,h3,.big,.btn,.chip,.count,.hook,.title .t-a,.title .t-b,.mode b,.cname,.fp,.sec h4,.sdoor b,.gl-h,.gl-type b,.gl-nm b,.gl-top b,.pv-tip,.opt b{font-weight:600!important;letter-spacing:0!important}
+.title .t-a,.title .t-b{letter-spacing:.5px!important}
+.cname{font-size:clamp(26px,8.4vw,38px)!important;line-height:1.12!important;letter-spacing:0!important;overflow-wrap:anywhere}
+.you,.sec h4,.fp small{letter-spacing:.3px!important}
+.q,.opt{hyphens:manual;overflow-wrap:break-word}
+.gl-l-sign .gl-av i{font-size:17px!important}
+.sx-sp{grid-template-columns:5.9em 1fr 5.9em!important;gap:6px!important;font-size:12px!important}.sx-sp>*:first-child{text-align:right}.sx-sp>*:last-child{text-align:left}

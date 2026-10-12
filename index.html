@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Life's Choices · How would you love?</title>
+<meta name="description" content="Find out if love is on your mind, when it might show up, and which character you'd be in love">
+<link rel="preload" href="fonts/fredoka-sub.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito-sub.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=1791792700">
+<link rel="stylesheet" href="themes.css?v=1791792700">
+<link rel="stylesheet" href="art.css?v=1791792700">
+<link rel="stylesheet" href="felt.css?v=1791792700">
+<link rel="stylesheet" href="gonglue.css?v=1791792700">
+<link rel="stylesheet" href="series.css?v=1791792700">
+<link rel="stylesheet" href="en.css?v=1791792700">
+</head><body>
+<div id="app">
+  <section id="start" class="page show">
+    <span class="dd" data-ic="star" style="top:8px;left:6px;width:30px;transform:rotate(-14deg)"></span>
+    <span class="dd" data-ic="flower" style="top:44px;right:10px;width:34px"></span>
+    <span class="dd" data-ic="spark" style="top:196px;left:0;width:22px"></span>
+    <div class="envelope" data-ic="envelope" data-size="110"></div>
+    <h1 class="title"><span class="t-a">Life's</span><span class="t-b">Choices</span></h1>
+    <p class="sub">Behind the door, who are you in love?</p>
+    <p class="pick">Pick a door: the big ones are about love, the little ones hold more games</p>
+    <button class="mode serious" data-mode="serious"><span class="tape"></span><span class="mi" data-ic="lens" data-t="s" data-size="46"></span><span class="mt"><b>Thoughtful</b><small>Real-life moments · as careful as we can</small></span></button>
+    <button class="mode funny" data-mode="funny"><span class="tape"></span><span class="mi" data-ic="popper" data-t="f" data-size="46"></span><span class="mt"><b>Silly</b><small>Wild questions · fun comes first</small></span></button>
+    <div class="doors">
+      <button class="sdoor live" id="doorGl"><span class="sd-ic" data-sv="door"></span><b>Crush Mode</b><small>Pick someone</small></button>
+      <button class="sdoor soon" data-sx="love" disabled><span class="sd-ic" data-sv="hwin"></span><b>Love Shapes</b><small>Coming soon</small></button>
+      <button class="sdoor soon" data-sx="life" disabled><span class="sd-ic" data-sv="house"></span><b>Daily Life</b><small>Coming soon</small></button>
+      <button class="sdoor soon" data-sx="work" disabled><span class="sd-ic" data-sv="clock"></span><b>At Work</b><small>Coming soon</small></button>
+    </div>
+    <p class="tiny">8–10 questions per door · about 2 minutes · just for fun</p>
+    <a id="themeLink" class="theme-link" href="?theme=vangogh"><span data-ic="sunflower" data-t="v" data-size="22"></span><span id="themeText">Try the Starry Night edition</span></a>
+    <button type="button" id="legalToggle" class="legal-toggle">About this quiz (disclaimer & privacy)</button>
+    <div id="legalPanel" class="legal-panel hide" hidden>
+      <h3>Disclaimer</h3>
+      <p>This quiz is just for fun. Your results come from your answers. It isn't a psychological assessment, fortune-telling or a love forecast, and it can't tell whether or when you'll fall in love. Character matches are playful comparisons, so please don't take them seriously.</p>
+      <h3>Privacy</h3>
+      <p>No sign-in needed. Everything happens in your phone's browser. We don't collect, store or sell your answers or any personal information. Please don't type in your real name, phone number or ID details. If paid content ever appears, anyone under 18 should ask a parent or guardian first.</p>
+      <button type="button" id="legalClose" class="link">Close</button>
+    </div>
+  </section>
+  <section id="quiz" class="page">
+    <div class="top"><span id="modeTag" class="chip"></span><span id="count" class="count"></span></div>
+    <div class="track"><i id="barIn"></i><span id="pen" class="pen"></span></div>
+    <div class="qcard" id="qcard">
+      <span class="dd qdeco" id="qdeco"></span>
+      <div id="qdim" class="qdim"></div><h2 id="qtext"></h2><div id="opts"></div>
+    </div>
+    <button id="back" class="link">← Back</button>
+  </section>
+  <section id="result" class="page">
+    <div id="card" class="card"></div>
+    <div class="actions">
+      <button id="save" class="btn main"><span id="camIc"></span>Save my card</button>
+      <button id="other" class="btn"></button>
+      <button id="toGl" class="btn gl-entry">Want to get closer to someone? Try Crush Mode</button>
+      <button id="again" class="link">Take it again</button>
+    </div>
+    <div id="preview" class="preview hide">
+      <div class="pv-tip">Press and hold the picture to save it</div>
+      <div class="polaroid"><img id="previewImg" alt="Result card"></div>
+      <button class="btn close" id="closePrev">Got it</button>
+    </div>
+  </section>
+  <section id="glType" class="page">
+    <div class="gl-top"><button class="link" id="glTypeBack">← Back</button></div>
+    <h2 class="gl-h">Who would you like to get closer to?</h2><p class="gl-s">Pick someone and see how well you click (just for fun)</p>
+    <div class="gl-types">
+      <button class="gl-type t-char" data-type="char"><span data-sv="door"></span><b>Characters</b><small>A character at one moment of their story</small></button>
+      <button class="gl-type t-mbti" data-type="mbti"><span data-sv="patch"></span><b>MBTI</b><small>All 16 types, pick one</small></button>
+      <button class="gl-type t-sign" data-type="sign"><span data-sv="ystar"></span><b>Star signs</b><small>All 12 signs</small></button>
+      <button class="gl-type t-xiu" disabled><span data-sv="moon"></span><b>Lunar mansions</b><small>Arriving in part two</small><em>Coming soon</em></button>
+    </div>
+    <p class="tiny">Fictional characters and type labels only · 8 questions · just for fun</p>
+  </section>
+  <section id="glPick" class="page">
+    <div class="gl-top"><button class="link" id="glPickBack">←</button><b>Pick someone</b><span class="chip" id="glPickType"></span></div>
+    <div id="glPool" class="gl-pool"><button class="on" data-pool="serious">Thoughtful set</button><button data-pool="funny">Silly set</button></div>
+    <div id="glList" class="gl-list"></div>
+    <div class="gl-bottom"><button class="btn main" id="glGo" disabled>That's the one, let's start</button></div>
+  </section>
+  <section id="glQuiz" class="page">
+    <div class="top"><span id="glChip" class="chip"></span><span id="glCount" class="count"></span></div>
+    <div class="track gl-track"><i id="glBar"></i><span class="gl-hearte" data-sv="heart"></span></div>
+    <div class="qcard" id="glQcard"><h2 id="glQ"></h2><div id="glOpts"></div></div>
+    <button id="glBack" class="link">← Back</button>
+  </section>
+  <section id="glResult" class="page">
+    <div id="glCard" class="card gl-card"></div>
+    <div class="actions">
+      <button id="glSave" class="btn main">Save my crush card</button>
+      <button id="glSwap" class="btn">Pick someone else</button>
+      <button id="glHome" class="link">Back to the main quiz</button>
+    </div>
+    <div id="glPrev" class="preview hide"><div class="pv-tip">Press and hold the picture to save it</div><div class="polaroid"><img id="glImg" alt="Crush card"></div><button class="btn close" id="glClose">Got it</button></div>
+  </section>
+  <section id="sxQuiz" class="page">
+    <div class="top"><span id="sxChip" class="chip"></span><span id="sxCount" class="count"></span></div>
+    <div class="track"><i id="sxBar"></i></div>
+    <div class="qcard" id="sxQcard"><h2 id="sxQ"></h2><div id="sxOpts"></div></div>
+    <button id="sxBack" class="link">← Back</button>
+  </section>
+  <section id="sxResult" class="page">
+    <div id="sxCard" class="card sx-card"></div>
+    <div class="actions">
+      <button id="sxSave" class="btn main">Save my card</button>
+      <button id="sxPairBtn" class="btn sx-pairbtn" hidden>Make a compare link and send it to a friend</button>
+      <button id="sxNext" class="btn" hidden></button>
+      <button id="sxAgain" class="btn">Take it again</button>
+      <button id="sxHome" class="link">Back to start</button>
+    </div>
+    <div id="sxPrev" class="preview hide"><div class="pv-tip">Press and hold the picture to save it</div><div class="polaroid"><img id="sxImg" alt="Result card"></div><button class="btn close" id="sxClose">Got it</button></div>
+  </section>
+</div>
+<script src="icons.js?v=1791792700"></script>
+<script src="data.js?v=1791792700"></script>
+<script src="bank.js?v=1791792700"></script>
+<script src="app.js?v=1791792700"></script>
+<script src="gonglue-data.js?v=1791792700"></script>
+<script src="gonglue.js?v=1791792700"></script>
+<script src="sx-love.js?v=1791792700"></script>
+<script src="sx-life.js?v=1791792700"></script>
+<script src="sx-work.js?v=1791792700"></script>
+<script src="series.js?v=1791792700"></script>
+</body></html>
